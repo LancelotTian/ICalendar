@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class name="com.smartdot.calendar.beans.SCalendar" table="calendar">
+	<id name="id" column="ID" type="java.lang.String" length="32">
+		<generator class="uuid"></generator>
+	</id>
+	<property name="name" column="NAME" type="java.lang.String" length="128"></property>
+	<property name="color" column="COLOR" type="java.lang.Integer"></property>
+	<property name="isDefault" column="ISDEFAULT" type="java.lang.Boolean"></property>
+	<property name="hidden" column="HIDDEN" type="java.lang.String" length="32"></property>
+	<property name="off" column="OFF" type="java.lang.Boolean"></property>
+	<property name="userId" column="USERID" type="java.lang.String" length="32" not-null="true"></property>
+	
+	<property name="details" column="DETAILS" type="java.lang.String" length="300"></property>
+	<property name="location" column="LOCATION" type="java.lang.String" length="100"></property>
+	<property name="gl" column="GL" type="java.lang.String" length="100"></property>
+	<property name="ctz" column="CTZ" type="java.lang.String" length="100"></property>
+	<property name="groupEmail" column="GRPEML" type="java.lang.String" length="100"></property>
+	<property name="apId" column="APID" type="java.lang.String" length="100"></property>
+	<property name="apPopedum" column="APPOPEDUM" type="java.lang.String" length="100"></property>
+	<property name="ncal" column="NCAL" type="java.lang.Boolean" ></property>
+	<property name="undefined" column="UNDF" type="java.lang.Boolean" ></property>
+	<property name="rp" column="RP" type="java.lang.String" length="100"></property>
+</class>
+</hibernate-mapping>

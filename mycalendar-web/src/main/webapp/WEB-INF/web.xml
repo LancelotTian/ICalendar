@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <display-name>SmartdotCalendar</display-name>
+    <servlet>
+        <servlet-name>InitServlet</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.InitServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>WEB-INF\classes\calendarConfig.properties</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <description>calendar compose</description>
+        <display-name>calendar compose</display-name>
+        <servlet-name>Compose</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.Compose</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Calendar event</description>
+        <display-name>Calendar event</display-name>
+        <servlet-name>Event</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.Event</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Calendar caldetails</description>
+        <display-name>Calendar caldetails</display-name>
+        <servlet-name>Caldetails</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.Caldetails</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Calendar load</description>
+        <display-name>Calendar load</display-name>
+        <servlet-name>Load</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.Load</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Calendar Contacts</description>
+        <display-name>Calendar Contacts</display-name>
+        <servlet-name>Contacts</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.Contacts</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Calendar DeleteEvent</description>
+        <display-name>Calendar DeleteEvent</display-name>
+        <servlet-name>Deleteevent</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.Deleteevent</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Calendar Ping</description>
+        <display-name>Calendar Ping</display-name>
+        <servlet-name>Ping</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.Ping</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts-config.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>3</param-value>
+        </init-param>
+        <init-param>
+            <param-name>detail</param-name>
+            <param-value>3</param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet>
+        <description>Calendar UserPrefs</description>
+        <display-name>Calendar UserPrefs</display-name>
+        <servlet-name>UserPrefs</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.UserPrefs</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Calendar Search</description>
+        <display-name>Calendar Search</display-name>
+        <servlet-name>Search</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.Search</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Calendar Presence</description>
+        <display-name>Calendar Presence</display-name>
+        <servlet-name>Presence</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.Presence</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Multi-Caendar Create</description>
+        <display-name>update Tzs</display-name>
+        <servlet-name>UpdateTzs</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.UpdateTzsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <description>put in another calendar</description>
+        <display-name>editcaldetails</display-name>
+        <servlet-name>EditCalDetails</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.EditCalDetails</servlet-class>
+    </servlet>
+    <servlet>
+        <description>put in another calendar</description>
+        <display-name>editcallist</display-name>
+        <servlet-name>EditCalList</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.EditCalList</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Calendar ExportIcalZip</description>
+        <display-name>Calendar ExportIcalZip</display-name>
+        <servlet-name>ExportIcalZip</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.ExportIcalZip</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Upload_event</description>
+        <display-name>Upload_event</display-name>
+        <servlet-name>Upload_event</servlet-name>
+        <servlet-class>net.tl.icalendar.servlet.Upload_event</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Compose</servlet-name>
+        <url-pattern>/compose</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Event</servlet-name>
+        <url-pattern>/event</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Caldetails</servlet-name>
+        <url-pattern>/caldetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Load</servlet-name>
+        <url-pattern>/load</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Contacts</servlet-name>
+        <url-pattern>/contacts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Deleteevent</servlet-name>
+        <url-pattern>/deleteevent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Ping</servlet-name>
+        <url-pattern>/ping</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserPrefs</servlet-name>
+        <url-pattern>/user_prefs</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InitServlet</servlet-name>
+        <url-pattern>/servlet/InitServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Search</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Presence</servlet-name>
+        <url-pattern>/presence</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateTzs</servlet-name>
+        <url-pattern>/updateTzs</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditCalDetails</servlet-name>
+        <url-pattern>/editcaldetails</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditCalList</servlet-name>
+        <url-pattern>/editcallist</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExportIcalZip</servlet-name>
+        <url-pattern>/exporticalzip</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Upload_event</servlet-name>
+        <url-pattern>/upload_event</url-pattern>
+    </servlet-mapping>
+    <!-- use this in release,in there using ejb to do SSO with WAS.In tomcat beta ,do not use this -->
+    <!--	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>indi_calendar</web-resource-name>
+			<url-pattern>/*</url-pattern>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>authed</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>indi_calendar</realm-name>
+	</login-config>
+	<security-role>
+		<role-name>authed</role-name>
+	</security-role>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>-->
+    <!-- use this only in tomcat beta.MUST exist one in this and above -->
+    <welcome-file-list>
+        <welcome-file>logon.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

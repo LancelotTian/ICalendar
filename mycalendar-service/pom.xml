@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>icalendar</artifactId>
+        <groupId>net.tl</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    
+    <artifactId>icalendar-service</artifactId>
+    <packaging>war</packaging>
+    <name>${project.artifactId}</name>
+    
+    <!-- 依赖项定义 -->
+    <dependencies>
+	<!-- project core -->
+<!--        <dependency>
+            <groupId>com.my</groupId>
+            <artifactId>mycalendar-core</artifactId>
+        </dependency>-->
+
+	<!-- webservice begin -->
+        <!--
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+        </dependency>
+        -->
+	<!-- webservice end -->
+
+	<!-- rest end -->
+    </dependencies>
+</project>

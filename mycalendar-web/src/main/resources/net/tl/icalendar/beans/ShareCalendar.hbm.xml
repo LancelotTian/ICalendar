@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="net.tl.icalendar.beans.ShareCalendar" table="sharecalendar">
+    <id column="ID" length="32" name="id" type="java.lang.String">
+      <generator class="uuid"/>
+    </id>
+    <property column="PERSONID" length="128" name="userId" not-null="true" type="java.lang.String"/>
+    <property column="COLOR" name="color" type="java.lang.Integer"/>
+    <property column="HIDDEN" name="hidden" type="java.lang.Boolean"/>
+    <property column="NAME" length="128" name="name" type="java.lang.String"/>
+    <property column="OFF" name="off" type="java.lang.Boolean"/>
+    <property column="POWER" name="power" type="java.lang.Integer"/>
+    <property column="CALENDARID" length="32" name="calendarId" type="java.lang.String"/>
+  </class>
+</hibernate-mapping>

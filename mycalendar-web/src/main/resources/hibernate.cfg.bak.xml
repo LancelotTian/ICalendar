@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- MySql connection 
+			<property name="connection.url">jdbc:mysql://localhost:3306/calendar</property>
+			<property name="connection.username">root</property>
+			<property name="connection.password">root</property>
+			<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+			<property name="dialect">org.hibernate.dialect.MySQLDialect</property> 
+		-->
+    <!-- DB2 connection 
+			<property name="connection.url">
+			jdbc:db2://172.20.90.179:50000/INDICAL
+			</property>
+			<property name="connection.username">db2admin</property>
+			<property name="connection.password">db2admin</property>
+			<property name="connection.driver_class">
+			com.ibm.db2.jcc.DB2Driver
+			</property>
+                        <property name="dialect">org.hibernate.dialect.DB2Dialect</property>-->
+    <!-- C3P0 ConnectionPool config 
+			<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+			
+			<property name="hibernate.c3p0.max_size">30</property>
+			<property name="hibernate.c3p0.min_size">5</property>
+			<property name="hibernate.c3p0.timeout">120</property>
+			<property name="hibernate.c3p0.max_statements">100</property>
+			<property name="hibernate.c3p0.idle_test_period">120</property>
+			<property name="hibernate.c3p0.acquire_increment">2</property>
+		-->
+    <!-- connect to WAS DataSource -->
+    <!--        <property name="hibernate.connection.datasource">
+			jdbc/indical
+        </property>-->
+    <!--        <property name="connection.url">jdbc:h2:tcp://localhost/~/test</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password"></property>
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>-->
+    <property name="show_sql">false</property>
+    <!--
+                <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+        -->
+    <property name="hibernate.current_session_context_class">thread</property>
+    <!-- delete belows when using ant generate db script  -->
+    <mapping resource="net/tl/icalendar/beans/Activity.hbm.xml"/>
+    <mapping resource="net/tl/icalendar/beans/ActivityComment.hbm.xml"/>
+    <mapping resource="net/tl/icalendar/beans/SCalendar.hbm.xml"/>
+    <mapping resource="net/tl/icalendar/beans/SeriesBaseInfo.hbm.xml"/>
+    <mapping resource="net/tl/icalendar/beans/DateDuration.hbm.xml"/>
+    <mapping resource="net/tl/icalendar/beans/CalendarDisplayConfig.hbm.xml"/>
+    <mapping resource="net/tl/icalendar/beans/ActivityMailReminder.hbm.xml"/>
+    <mapping resource="net/tl/icalendar/beans/CalendarTask.hbm.xml"/>
+    <mapping resource="net/tl/icalendar/beans/ActivitySmsReminder.hbm.xml"/>
+    <mapping resource="net/tl/icalendar/beans/ActivityShare.hbm.xml"/>
+    <mapping resource="net/tl/icalendar/beans/ShareCalendar.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

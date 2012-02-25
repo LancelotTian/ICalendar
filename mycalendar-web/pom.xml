@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>net.tl</groupId>
+        <artifactId>icalendar</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>icalendar-web</artifactId>
+    <packaging>war</packaging>
+    <name>${project.artifactId}</name>
+
+    <!-- 项目属性 -->
+    <properties>
+        <jdbc.driver.groupId>com.h2database</jdbc.driver.groupId>
+        <jdbc.driver.artifactId>h2</jdbc.driver.artifactId>
+        <jdbc.driver.version>${h2.version}</jdbc.driver.version>
+    <!--
+	<jdbc.driver.groupId>com.oracle</jdbc.driver.groupId> <jdbc.driver.artifactId>ojdbc14</jdbc.driver.artifactId>
+	<jdbc.driver.version>10.2.0.3.0</jdbc.driver.version>
+    -->
+    <!--
+	<jdbc.driver.groupId>mysql</jdbc.driver.groupId>
+	<jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
+	<jdbc.driver.version>5.1.13</jdbc.driver.version>
+    -->
+        <netbeans.hint.deploy.server>Tomcat60</netbeans.hint.deploy.server>
+    </properties>
+
+    <!-- 依赖项定义 -->
+    <dependencies>
+
+	<!-- project core -->
+        <dependency>
+            <groupId>net.tl</groupId>
+            <artifactId>icalendar-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+	<!-- web begin -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+	<!-- web end -->
+
+       <dependency>
+            <groupId>struts</groupId>
+            <artifactId>struts</artifactId>
+            <version>1.2.9</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>antlr</groupId>
+                    <artifactId>antlr</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.1</version>
+        </dependency>
+    </dependencies>
+</project>

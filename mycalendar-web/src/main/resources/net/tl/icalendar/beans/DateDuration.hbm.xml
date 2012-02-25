@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="net.tl.icalendar.beans.DateDuration" table="dateduration">
+    <id column="ID" name="id" type="java.lang.String">
+      <generator class="foreign">
+        <param name="property">activity</param>
+      </generator>
+    </id>
+    <one-to-one class="net.tl.icalendar.beans.Activity" constrained="true" name="activity"/>
+    <property column="STARTTIME" name="startTime" type="java.util.Date"/>
+    <property column="ENDTIME" name="endTime" type="java.util.Date"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.smartdot.calendar.beans.CalendarTask" table="calendartask">
+		<id name="id" column="ID" type="java.lang.String" length="32">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="taskId" column="TASKID" type="java.lang.String" length="16"></property>
+		<property name="taskType" column="TYPE" type="java.lang.Integer" ></property>
+		<property name="taskDesc" column="DESC" type="java.lang.String" length="1024"></property>	
+		<property name="searchDate" column="SDATE" type="java.util.Date"></property>
+	</class>
+</hibernate-mapping>

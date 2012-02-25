@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="net.tl.icalendar.beans.ActivitySmsReminder" table="smsreminder">
+    <id column="ID" length="32" name="id" type="java.lang.String">
+      <generator class="uuid"/>
+    </id>
+    <property column="ACTIVITYID" length="32" name="activityId" type="java.lang.String"/>
+    <property column="REMINDTIME" length="16" name="remindTime" type="java.lang.String"/>
+    <property column="SDATE" name="searchDate" type="java.util.Date"/>
+  </class>
+</hibernate-mapping>

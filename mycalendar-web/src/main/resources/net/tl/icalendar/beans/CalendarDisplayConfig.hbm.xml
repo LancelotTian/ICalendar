@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="net.tl.icalendar.beans.CalendarDisplayConfig" table="displayconfig">
+    <id column="ID" length="32" name="id" type="java.lang.String">
+      <generator class="uuid"/>
+    </id>
+    <property column="DTFLDORDER" length="3" name="dtFldOrdr" type="java.lang.String"/>
+    <property column="FORMAT24HOURTIME" name="format24HourTime" type="java.lang.Boolean"/>
+    <property column="FIRSTDAY" length="1" name="firstDay" type="java.lang.String"/>
+    <property column="WEEKVIEW5" name="weekView5" type="java.lang.Boolean"/>
+    <property column="DEFAULTCALMODE" length="10" name="defaultCalMode" type="java.lang.String"/>
+    <property column="CUSTOMCALMODE" length="16" name="customCalMode" type="java.lang.String"/>
+    <property column="SHOWCURTIME" name="showCurrentTimeLine" type="java.lang.Boolean"/>
+    <property column="SHOWDECLINED" name="showDeclined" type="java.lang.Boolean"/>
+    <property column="PERSONID" length="32" name="personId" not-null="true" type="java.lang.String" unique="true"/>
+  </class>
+</hibernate-mapping>

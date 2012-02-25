@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="net.tl.icalendar.beans.SeriesBaseInfo" table="seriesbase">
+    <id column="ID" length="32" name="id" type="java.lang.String">
+      <generator class="uuid"/>
+    </id>
+    <property column="TEXT" length="256" name="text" type="java.lang.String"/>
+    <property column="LOCATION" length="128" name="location" type="java.lang.String"/>
+    <property column="DETAILS" length="1024" name="details" type="java.lang.String"/>
+    <property column="STARTTIME" name="startTime" type="java.util.Date"/>
+    <property column="DATEDURATION" name="dateDuration" type="java.lang.Long"/>
+    <property column="GUESTSEMAIL" length="256" name="guestsEmail" type="java.lang.String"/>
+    <property column="SPROP" length="256" name="sprop" type="java.lang.String"/>
+    <property column="TRP" name="trp" type="java.lang.Boolean"/>
+    <property column="ICC" length="16" name="icc" type="java.lang.String"/>
+    <property column="RECUR" length="256" name="recur" type="java.lang.String"/>
+  </class>
+</hibernate-mapping>

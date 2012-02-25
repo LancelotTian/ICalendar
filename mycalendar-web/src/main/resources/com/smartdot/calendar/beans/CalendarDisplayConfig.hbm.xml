@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.smartdot.calendar.beans.CalendarDisplayConfig" table="displayconfig">
+		<id name="id" column="ID" type="java.lang.String" length="32">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="dtFldOrdr" column="DTFLDORDER" type="java.lang.String" length="3"></property>
+		<property name="format24HourTime" column="FORMAT24HOURTIME" type="java.lang.Boolean"></property>
+		<property name="firstDay" column="FIRSTDAY" type="java.lang.String" length="1"></property>
+		<property name="weekView5" column="WEEKVIEW5" type="java.lang.Boolean"></property>
+		<property name="defaultCalMode" column="DEFAULTCALMODE" type="java.lang.String" length="10"></property>
+		<property name="customCalMode" column="CUSTOMCALMODE" type="java.lang.String" length="16"></property>
+		<property name="showCurrentTimeLine" column="SHOWCURTIME" type="java.lang.Boolean"></property>
+		<property name="showDeclined" column="SHOWDECLINED" type="java.lang.Boolean"></property>
+		<property name="personId" column="PERSONID" type="java.lang.String" length="32" not-null="true" unique="true"></property>
+	</class>
+</hibernate-mapping>

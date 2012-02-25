@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.smartdot.calendar.beans.Activity" table="activity">
+	<id name="id" column="ID" type="java.lang.String" length="32">
+		<generator class="uuid"></generator>
+	</id>
+	<property name="text" column="TEXT" type="java.lang.String" length="256"></property>	
+	<property name="location" column="LOCATION" type="java.lang.String" length="128"></property>
+	<property name="details" column="DETAIL" type="java.lang.String" length="1024"></property>
+	<property name="startTime" column="STARTTIME" type="java.util.Date"></property>
+	<property name="endTime" column="ENDTIME" type="java.util.Date"></property>
+	<property name="icc" column="ICC" type="java.lang.String" length="16"></property>
+	<property name="trp" column="TRP" type="java.lang.Boolean"></property>
+	<property name="erem" column="EREM" type="java.lang.String" length="256"></property>
+	<property name="sprop" column="SPROP" type="java.lang.String" length="256"></property>
+	<property name="seriesState" column="SERIESSTATE" type="java.lang.Integer"></property>
+	<property name="seriesId" column="SERIESID" type="java.lang.String" length="32"></property>
+	<property name="guestsEmail" column="GUESTSEMAIL" type="java.lang.String" length="256"></property>
+	<property name="lastModifyTime" column="LASTMODIFYTIME" type="java.util.Date"></property>
+	<property name="secid" column="PERSONID" type="java.lang.String" length="32" not-null="true"></property>
+	<property name="srcCalendarId" column="CALENDARID" type="java.lang.String" length="32" not-null="true"></property>
+	<property name="sf" column="SF" type="java.lang.Boolean" ></property>	
+	<property name="idInApp" column="IDINAPP" type="java.lang.String" length="64"></property>
+	<property name="appType" column="APPTYPE" type="java.lang.String" length="32"></property>
+	<property name="extendProp" column="EXTENDPROP" type="java.lang.String" length="1024"></property>
+	<one-to-one name="orignDateDuration" class="com.smartdot.calendar.beans.DateDuration" cascade="all" lazy="false"></one-to-one>
+	<set name="comments" table="comment" cascade="all" order-by="CREATEDDATE desc" lazy="false" >
+		<key column="ACTIVITYID"></key>
+		<one-to-many class="com.smartdot.calendar.beans.ActivityComment"/>
+	</set>
+	<set name="mailReminders" table="mailreminder" cascade="all" lazy="false" >
+		<key column="ACTIVITYID"></key>
+		<one-to-many class="com.smartdot.calendar.beans.ActivityMailReminder"/>
+	</set>
+	<set name="smsReminders" table="smsreminder" cascade="all" lazy="false" >
+		<key column="ACTIVITYID"></key>
+		<one-to-many class="com.smartdot.calendar.beans.ActivitySmsReminder"/>
+	</set>
+	<set name="activityShare" table="activityShare" inverse="true" lazy="false" cascade="all">
+          <key>
+              <column name="ACTIVITYID"  />
+          </key>
+          <one-to-many class="com.smartdot.calendar.beans.ActivityShare" />
+      </set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="net.tl.icalendar.beans.Activity" table="activity">
+    <id column="ID" length="32" name="id" type="java.lang.String">
+      <generator class="uuid"/>
+    </id>
+    <property column="TEXT" length="256" name="text" type="java.lang.String"/>
+    <property column="LOCATION" length="128" name="location" type="java.lang.String"/>
+    <property column="DETAIL" length="1024" name="details" type="java.lang.String"/>
+    <property column="STARTTIME" name="startTime" type="java.util.Date"/>
+    <property column="ENDTIME" name="endTime" type="java.util.Date"/>
+    <property column="ICC" length="16" name="icc" type="java.lang.String"/>
+    <property column="TRP" name="trp" type="java.lang.Boolean"/>
+    <property column="EREM" length="256" name="erem" type="java.lang.String"/>
+    <property column="SPROP" length="256" name="sprop" type="java.lang.String"/>
+    <property column="SERIESSTATE" name="seriesState" type="java.lang.Integer"/>
+    <property column="SERIESID" length="32" name="seriesId" type="java.lang.String"/>
+    <property column="GUESTSEMAIL" length="256" name="guestsEmail" type="java.lang.String"/>
+    <property column="LASTMODIFYTIME" name="lastModifyTime" type="java.util.Date"/>
+    <property column="PERSONID" length="32" name="secid" not-null="true" type="java.lang.String"/>
+    <property column="CALENDARID" length="32" name="srcCalendarId" not-null="true" type="java.lang.String"/>
+    <property column="SF" name="sf" type="java.lang.Boolean"/>
+    <property column="IDINAPP" length="64" name="idInApp" type="java.lang.String"/>
+    <property column="APPTYPE" length="32" name="appType" type="java.lang.String"/>
+    <property column="EXTENDPROP" length="1024" name="extendProp" type="java.lang.String"/>
+    <one-to-one cascade="all" class="net.tl.icalendar.beans.DateDuration" lazy="false" name="orignDateDuration"/>
+    <set cascade="all" lazy="false" name="comments" order-by="CREATEDDATE desc" table="comment">
+      <key column="ACTIVITYID"/>
+      <one-to-many class="net.tl.icalendar.beans.ActivityComment"/>
+    </set>
+    <set cascade="all" lazy="false" name="mailReminders" table="mailreminder">
+      <key column="ACTIVITYID"/>
+      <one-to-many class="net.tl.icalendar.beans.ActivityMailReminder"/>
+    </set>
+    <set cascade="all" lazy="false" name="smsReminders" table="smsreminder">
+      <key column="ACTIVITYID"/>
+      <one-to-many class="net.tl.icalendar.beans.ActivitySmsReminder"/>
+    </set>
+    <set cascade="all" inverse="true" lazy="false" name="activityShare" table="activityShare">
+      <key>
+        <column name="ACTIVITYID"/>
+      </key>
+      <one-to-many class="net.tl.icalendar.beans.ActivityShare"/>
+    </set>
+  </class>
+</hibernate-mapping>

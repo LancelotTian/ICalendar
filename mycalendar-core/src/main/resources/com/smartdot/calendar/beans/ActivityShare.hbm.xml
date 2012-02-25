@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.smartdot.calendar.beans.ActivityShare" table="ActivityShare">
+	<id name="id" column="ID" type="java.lang.String" length="32">
+		<generator class="uuid"></generator>
+	</id>
+	<property name="uid" column="UID" type="java.lang.String" length="100"></property>	
+	
+	<property name="join" column="CALJOIN" type="java.lang.Integer"></property><!-- 0,waitting; 1,join; 2,no;3,maybe -->
+	
+	<property name="modifiable" column="MODIFY" type="java.lang.Boolean"></property>
+	
+	<property name="inviteable" column="INVITE" type="java.lang.Boolean"></property>
+	
+	<property name="viewable" column="VIEW" type="java.lang.Boolean"></property>
+	
+	<property name="extraGuests" column="EXTRAGST" type="java.lang.Integer"></property>
+	
+	<property name="comment" column="COMMENT" type="java.lang.String" length="100"></property>
+			
+	 <many-to-one name="activity" class="com.smartdot.calendar.beans.Activity" fetch="select">
+         <column name="ACTIVITYID"  not-null="true">
+         <comment>activity</comment>
+        </column>
+     </many-to-one>
+	
+	</class>
+</hibernate-mapping>

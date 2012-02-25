@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.smartdot.calendar.beans.ShareCalendar" table="sharecalendar">
+		<id name="id" column="ID" type="java.lang.String" length="32">
+			<generator class="uuid"></generator>
+		</id>
+		
+		<property name="userId" column="PERSONID" type="java.lang.String" length="128" not-null="true"></property>
+		<property name="color" column="COLOR" type="java.lang.Integer"></property>
+		<property name="hidden" column="HIDDEN" type="java.lang.Boolean"></property>
+		<property name="name" column="NAME" type="java.lang.String" length="128"></property>
+		<property name="off" column="OFF" type="java.lang.Boolean"></property>
+		<property name="power" column="POWER" type="java.lang.Integer"></property>
+		<property name="calendarId" column="CALENDARID" type="java.lang.String" length="32"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="net.tl.icalendar.beans.SCalendar" table="calendar">
+    <id column="ID" length="32" name="id" type="java.lang.String">
+      <generator class="uuid"/>
+    </id>
+    <property column="NAME" length="128" name="name" type="java.lang.String"/>
+    <property column="COLOR" name="color" type="java.lang.Integer"/>
+    <property column="ISDEFAULT" name="isDefault" type="java.lang.Boolean"/>
+    <property column="HIDDEN" length="32" name="hidden" type="java.lang.String"/>
+    <property column="OFF" name="off" type="java.lang.Boolean"/>
+    <property column="USERID" length="32" name="userId" not-null="true" type="java.lang.String"/>
+    <property column="DETAILS" length="300" name="details" type="java.lang.String"/>
+    <property column="LOCATION" length="100" name="location" type="java.lang.String"/>
+    <property column="GL" length="100" name="gl" type="java.lang.String"/>
+    <property column="CTZ" length="100" name="ctz" type="java.lang.String"/>
+    <property column="GRPEML" length="100" name="groupEmail" type="java.lang.String"/>
+    <property column="APID" length="100" name="apId" type="java.lang.String"/>
+    <property column="APPOPEDUM" length="100" name="apPopedum" type="java.lang.String"/>
+    <property column="NCAL" name="ncal" type="java.lang.Boolean"/>
+    <property column="UNDF" name="undefined" type="java.lang.Boolean"/>
+    <property column="RP" length="100" name="rp" type="java.lang.String"/>
+  </class>
+</hibernate-mapping>

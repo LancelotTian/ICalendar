@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.smartdot.calendar.beans.ActivityComment" table="comment">
+		<id name="id" column="ID" type="java.lang.String" length="32">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="entryId" column="ACTIVITYID" type="java.lang.String" length="32"></property>
+		<property name="personId" column="PERSONID" type="java.lang.String" length="32" not-null="true"></property>
+		<property name="srcCalendarId" column="CALENDARID" type="java.lang.String" length="32"></property>
+		<property name="comment" column="COMMENT" type="java.lang.String" length="512"></property>
+		<property name="createdDate" column="CREATEDDATE" type="java.util.Date" ></property>
+	</class>
+</hibernate-mapping>
