@@ -37,3 +37,42 @@
 
         return ret;
     }
+
+
+
+    public static List<Integer> mergeSort(SortedSet<Integer> t1, SortedSet<Integer> t2){
+        Iterator<Integer> it1 = t1.iterator();
+        Iterator<Integer> it2 = t2.iterator();
+        Integer i1 = null;
+        Integer i2 = null;
+        List<Integer> ret = new ArrayList<Integer>();
+        while( (i1 != null || it1.hasNext()) &&
+               (i2 != null || it2.hasNext() )){
+            if(i1 == null)
+                i1 = it1.next();
+            if(i2 == null)
+                i2 = it2.next();
+            if(i1 == i2){
+                ret.add(i1);
+                i1 = i2 = null;
+            }else if(i1 < i2){
+                ret.add(i1);
+                i1 = null;
+            }else{
+                ret.add(i2);
+                i2 = null;
+            }
+        }
+        if(i1 != null || i2 != null)
+            ret.add(i1 == null ? i2:i1 );
+
+        while(it1.hasNext()){
+            ret.add(it1.next());
+        }
+        while(it2.hasNext()){
+            ret.add(it2.next());
+        }
+
+        return ret;
+    }
+}
